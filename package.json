@@ -1,0 +1,38 @@
+{
+    "name": "prefn",
+    "version": "0.0.1",
+    "description": "JavaScript framework of simple functional extension",
+    "main": "lib/index.js",
+    "homepage": "https://github.com/to4iki/data.monad",
+    "author": {
+        "name": "tsk takezawa",
+        "email": "tsk.take815@gmail.com",
+        "url": "https://github.com/to4iki"
+    },
+    "license": {
+        "type": "MIT",
+        "url": "http://to4iki.mit-license.org/"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/to4iki/data.monad.git"
+    },
+    "directories": {
+        "test": "test"
+    },
+    "keywords": [
+        "prelude"
+    ],
+    "files": [
+        "lib"
+    ],
+    "scripts": {
+        "build": "babel src --out-dir lib --source-maps-inline",
+        "watch": "babel src --out-dir lib --watch --source-maps-inline",
+        "test": "npm run build && mocha test/*.js"
+    },
+    "devDependencies": {
+        "babel": "^5.8.21",
+        "mocha": "^2.2.5"
+    }
+}
