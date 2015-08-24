@@ -5,15 +5,15 @@ import { Prelude } from './prelude';
 /**
 * Composes two instances of Function in a new Function, with this function applied first.
 */
-Function.prototype.andThen = function(fn) {
-    return Prelude.andThen(this, fn);
+Function.prototype.andThen = function(...fns) {
+    return Prelude.andThen(this, ...fns);
 };
 
 /**
 * Composes two instances of Function in a new Function, with this function applied last.
 */
-Function.prototype.compose = function(fn) {
-    return Prelude.compose(this, fn);
+Function.prototype.compose = function(...fns) {
+    return Prelude.compose(this, ...fns);
 };
 
 /**

@@ -12,18 +12,26 @@ describe('prefn', function() {
 
     it('#compose', function() {
         var f = f1.compose(f2).compose(f3);
+        var g = f1.compose(f2, f3)
         assert(f(1), 16);
+        assert(g(1), 16);
 
-        var g = f3.compose(f2).compose(f1);
-        assert(g(1), 66);
+        var h = f3.compose(f2).compose(f1);
+        var i = f3.compose(f2, f1);
+        assert(h(1), 66);
+        assert(i(1), 66);
     });
 
     it('#andThen', function() {
         var f = f1.andThen(f2).andThen(f3);
+        var g = f1.andThen(f2, f3);
         assert(f(1), 66);
+        assert(g(1), 66);
 
-        var g = f3.andThen(f2).andThen(f1);
-        assert(g(1), 16);
+        var h = f3.andThen(f2).andThen(f1);
+        var i = f3.andThen(f2, f1);
+        assert(h(1), 16);
+        assert(i(1), 16);
     });
 
     it('#curried', function() {
