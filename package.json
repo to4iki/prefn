@@ -1,6 +1,6 @@
 {
     "name": "prefn",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "JavaScript framework of simple functional extension",
     "main": "lib/index.js",
     "homepage": "https://github.com/to4iki/data.monad",
