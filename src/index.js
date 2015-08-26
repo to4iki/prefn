@@ -1,6 +1,6 @@
 'use strict';
 
-import { Prelude } from './prelude';
+import Prelude from './prelude';
 
 /**
 * Composes two instances of Function in a new Function, with this function applied first.
@@ -21,4 +21,21 @@ Function.prototype.compose = function(...fns) {
 */
 Function.prototype.curried = function() {
     return Prelude.curried(this);
+};
+
+/**
+* pratially applied functions
+*/
+Function.prototype.partial = function() {
+    let fn = this, args = Array.prototype.slice.call(arguments);
+
+    return function() {
+        let i = 0, arg = 0;
+        for (i; i < args.length && arg < arguments.length; i++) {
+            if (args[i] === undefined) {
+                args[i] = arguments[arg++];
+            }
+        }
+        return fn.apply(this, args);
+    }
 };

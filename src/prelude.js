@@ -3,7 +3,7 @@
 /**
  * Function Trait
  */
-export class Prelude {
+export default class Prelude {
 
     static andThen(...fns) {
         return fns.reverse().reduce((f, g) => (...args) => f(g(...args)));

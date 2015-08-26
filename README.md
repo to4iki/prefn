@@ -15,6 +15,7 @@ preparation
 ```js
 let f = x => x + 10
 let g = x => x * 2
+let plus = (a,b,c) => a + b + c;
 ```
 
 ##### compose
@@ -34,12 +35,20 @@ h(1) // 22
 ##### curried
 
 ```js
-let plus = (a,b,c) => a + b + c;
 let f = plus.curried();
 f(1,2,3) // 6
 f(1)(2,3) // 6
 f(1)(2)(3) // 6
 f(1,2)(3) // 6
+```
+
+##### partial
+
+```js
+let f = plus.partial(1, undefined, 3);
+f(1) // 5
+f(2) // 6
+f(3) // 7
 ```
 
 ## Installation

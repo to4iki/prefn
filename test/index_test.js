@@ -41,4 +41,11 @@ describe('prefn', function() {
         assert(f(1)(2)(3), 6);
         assert(f(1,2)(3), 6);
     });
+
+    it('#partial', function() {
+        var f = plus.partial(1, undefined, 3);
+        assert(f(1), 5);
+        assert(f(2), 6);
+        assert(f(3), 7);
+    });
 });
